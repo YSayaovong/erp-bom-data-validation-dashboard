@@ -1,142 +1,75 @@
-# Manufacturing Operations & ERP BOM Analytics  
-### Engineering Data Integrity & Operational KPI Intelligence (Mock Dataset)
+# Manufacturing Operations ERP/BOM Analytics — Corrected README
+
+## 1. Overview
+This project analyzes engineering and manufacturing BOM errors, revision activity, rework cost, and error resolution time using a realistic operations dataset modeled in Excel.
+
+Two dashboards are included:
+- Engineering Error Analysis Dashboard  
+- Revision Change Log Dashboard
 
 ---
 
-## Overview
-
-This project demonstrates manufacturing operations analytics using a simulated ERP Bill of Materials (BOM) validation and revision control dataset.
-
-The goal is to model structured engineering data discrepancies, analyze operational impact, and surface decision-ready KPIs that improve production data integrity and release quality.
-
-All data is fully simulated to protect employer confidentiality while reflecting realistic manufacturing workflows.
+## 2. Dashboard Preview
+*(Already included in GitHub)*
 
 ---
 
-## Business Context
+## 3. How to Use the Dashboard
 
-In high-volume manufacturing environments, ERP BOM errors and revision inconsistencies can lead to:
-
-- Rework on the shop floor  
-- Delays in production release  
-- Incorrect configurations  
-- Increased operational cost  
-- Engineering change bottlenecks  
-
-This project simulates how a Manufacturing or Engineering Operations Analyst would monitor, analyze, and improve BOM data quality.
-
----
-
-## Project Objectives
-
-- Identify trends in BOM errors over time  
-- Quantify rework rate and resolution efficiency  
-- Analyze cost impact of configuration discrepancies  
-- Track revision change activity  
-- Provide executive-level operational visibility  
+1. Open **Engineering_Analytics_Dashboard.xlsx**
+2. Go to the **Dashboard** tab
+3. Use slicers to filter by:
+   - Error Type
+   - Department
+   - Month
+4. Review primary KPIs:
+   - Total Errors
+   - Rework Cost
+   - Avg Time to Resolve
+   - Revision Count
+5. Explore trend charts for deeper operational insights
 
 ---
 
-## Dataset Structure
+## 4. Dataset Schema
 
-The model is built on two primary simulated datasets:
+### BOM_Error_Data
+| Column | Description |
+|--------|-------------|
+| error_id | Unique error record |
+| unit_id | Affected transformer/unit |
+| error_type | Wrong part, wrong rev, routing issue, etc. |
+| department | Eng, Mfg, Quality |
+| date_logged | Date issue discovered |
+| time_to_resolve_days | Days required to fix |
+| cost_impact | Estimated rework cost |
 
-### 1️⃣ BOM_Error_Data
-Tracks structured ERP configuration issues.
-
-Key Fields:
-- Date  
-- Unit_ID  
-- Error_Type  
-- Stage_Detected  
-- Department_Origin  
-- Time_to_Resolve_Hours  
-- Rework_Required  
-- Estimated_Impact_Cost_USD  
-
-### 2️⃣ Revision_Change_Log
-Tracks revision updates across part configurations.
-
-Key Fields:
-- Date  
-- Unit_ID  
-- Part_Number  
-- Old_Revision  
-- New_Revision  
-- Change_Reason  
-- Rework_Required  
+### Revision_Change_Log
+| Column | Description |
+|--------|-------------|
+| change_id | Revision event ID |
+| part_number | Affected part |
+| old_rev | Previous revision |
+| new_rev | Updated revision |
+| change_reason | ECO reason code |
+| date_changed | Date of change |
 
 ---
 
-## Analytical KPIs
+## 5. Interview Talking Points
 
-The dashboard includes:
-
-- Total BOM Errors  
-- Rework Rate (%)  
-- Average Time to Resolve  
-- Estimated Cost Impact  
-- Monthly Error Trend  
-- Error Distribution by Stage  
-- Error Distribution by Department  
-- Revision Change Frequency  
+- Built a realistic simulation of ERP BOM operational analytics.
+- Modeled KPI metrics used in manufacturing (rework cost, error frequency, resolution time).
+- Designed dashboards mirroring real engineering/manufacturing workflows.
+- Demonstrates Excel-based analytics exactly as used in most plants.
 
 ---
 
-## Key Analytical Questions Answered
-
-- Which error types contribute the highest cost impact?  
-- Which stages detect the most configuration issues?  
-- What is the monthly trend in BOM discrepancies?  
-- How often do revision changes trigger rework?  
-- Which departments contribute most to configuration risk?  
-
----
-
-## Tools Used
-
-- Microsoft Excel  
-  - PivotTables  
-  - Power Query  
-  - Structured Calculations  
-  - KPI Dashboards  
+## 6. Tools Used
+- Excel  
+- Power Query  
+- PivotTables  
+- KPI dashboards  
+- Mock operational datasets  
 
 ---
-
-## Data Governance Features
-
-- Simulated structured ERP schema  
-- Controlled error categorization  
-- Cost impact modeling  
-- Resolution time tracking  
-- Rework indicator logic  
-
----
-
-## Why This Project Matters
-
-Manufacturing organizations depend on accurate ERP configuration data to maintain production stability.
-
-This project demonstrates:
-
-- Structured operational analytics  
-- Manufacturing domain awareness  
-- KPI modeling for engineering workflows  
-- Data-driven process improvement  
-
----
-
-## Future Enhancements
-
-- PostgreSQL data mart version  
-- Power BI executive dashboard  
-- Python automation for weekly KPI reporting  
-- Anomaly detection on error spikes  
-
----
-
-## Author
-
-Yengkong Sayaovong  
-Manufacturing & Engineering Operations Analytics Focus  
-LinkedIn: https://www.linkedin.com/in/ysayaovong
